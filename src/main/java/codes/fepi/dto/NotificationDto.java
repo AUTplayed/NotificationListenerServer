@@ -8,12 +8,14 @@ public class NotificationDto {
     private String title;
     private String content;
     private String source;
+    private String key;
 
     public NotificationDto() {
     }
 
-    public NotificationDto(int id, long time, String title, String content, String source) {
+    public NotificationDto(int id, String key, long time, String title, String content, String source) {
         this.id = id;
+        this.key = key;
         this.time = time;
         this.title = title;
         this.content = content;
@@ -40,7 +42,11 @@ public class NotificationDto {
         return source;
     }
 
-    @Override
+	public String getKey() {
+		return key;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
