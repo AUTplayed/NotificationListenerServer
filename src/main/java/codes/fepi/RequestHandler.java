@@ -41,6 +41,7 @@ public class RequestHandler {
 	}
 
 	private Object getNotification(Request req, Response res) {
+		res.header("Content-Type", "application/json");
 		return writeDto(notifications);
 	}
 
